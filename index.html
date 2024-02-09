@@ -11,7 +11,8 @@
     monday.get('sessionToken')
         .then((token) => {
             console.log(token);
-            monday.setToken(token)
+            console.log(token.data);
+            monday.setToken(token.data)
         });
 
         monday.api(`query { users { id, name } }`).then(res => {
