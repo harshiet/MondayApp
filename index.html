@@ -24,6 +24,13 @@
     } catch (e) {
         console.error(e)
     }
+    try {
+        monday.api(`query { me { id name } }`).then(res => {
+            console.log(res);
+        });
+    } catch (e) {
+        console.error(e)
+    }
     monday.get("itemIds").then(res => console.log(res));
     monday.get("settings").then(res => console.log(res));
     monday.get("context").then(res => console.log(res));
