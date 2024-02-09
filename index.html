@@ -8,10 +8,16 @@
 <body>
 <script>
     const monday = window.mondaySdk()
-    monday.api(`query { users { id, name } }`).then(res => {
-        console.log(res);
-        /* { data: { users: [{id: 12312, name: "Bart Simpson"}, {id: 423423, name: "Homer Simpson"}] } } */
-    });
+    monday.get('sessionToken')
+        .then((token) => {
+            console.log(token);
+            monday.setToken(token)
+        });
+
+        monday.api(`query { users { id, name } }`).then(res => {
+            console.log(res);
+        });
+
 </script>
 asasasasas
 </body>
