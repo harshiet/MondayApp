@@ -14,11 +14,16 @@
             console.log(token.data);
             monday.setToken(token.data)
         });
-
-        monday.api(`query { users { id, name } }`).then(res => {
-            console.log(res);
-        });
-
+        try {
+            monday.api(`query { users { id, name } }`).then(res => {
+                console.log(res);
+            });
+        }catch (e){
+            console.error(e)
+        }
+    monday.get("itemIds").then(res => console.log(res));
+    monday.get("settings").then(res => console.log(res));
+    monday.get("context").then(res => console.log(res));
 </script>
 asasasasas
 </body>
