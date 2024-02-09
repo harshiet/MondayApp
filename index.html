@@ -6,6 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/monday-sdk-js/dist/main.js"></script>
 </head>
 <body>
+<div style="background: white">
+    Monday APP
+</div>
 <script>
     const monday = window.mondaySdk()
     monday.get('sessionToken')
@@ -14,17 +17,16 @@
             console.log(token.data);
             monday.setToken(token.data)
         });
-        try {
-            monday.api(`query { users { id, name } }`).then(res => {
-                console.log(res);
-            });
-        }catch (e){
-            console.error(e)
-        }
+    try {
+        monday.api(`query { users { id, name } }`).then(res => {
+            console.log(res);
+        });
+    } catch (e) {
+        console.error(e)
+    }
     monday.get("itemIds").then(res => console.log(res));
     monday.get("settings").then(res => console.log(res));
     monday.get("context").then(res => console.log(res));
 </script>
-asasasasas
 </body>
 </html>
